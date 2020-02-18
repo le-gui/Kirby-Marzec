@@ -1,0 +1,21 @@
+Caption: 
+
+----
+
+Alt: 
+
+----
+
+Size: s
+
+----
+
+Fat: s
+
+----
+
+Template: image
+
+----
+
+Sort: 6

@@ -1,0 +1,21 @@
+Caption: 
+
+----
+
+Alt: 
+
+----
+
+Fat: xs
+
+----
+
+Size: s
+
+----
+
+Template: image
+
+----
+
+Sort: 8

@@ -1,0 +1,13 @@
+title: Home
+icon: 🏠
+options:
+  changeStatus: false
+sections:
+  info:
+    headline: Info
+    type: info
+    text: All content for the homepage is being pulled from the Work page.
+  work:
+    headline: Work
+    extends: sections/albums
+    status: listed

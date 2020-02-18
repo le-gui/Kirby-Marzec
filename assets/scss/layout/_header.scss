@@ -1,0 +1,41 @@
+header {
+  width: 100%;
+  background: white;
+  z-index: $top;
+  text-transform: uppercase;
+
+  @include respond-to("small") {
+    position: relative;
+  }
+  @include respond-to("medium") {
+    position: fixed;
+  }
+
+  nav {
+    padding: 1vw;
+
+    @include respond-to("small") {
+      font-size: 20px;
+      line-height: 24px;
+    }
+    @include respond-to("medium") {
+      font-size: 2.4vw;
+      line-height: 2.4vw;
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+
+      .link {
+        &__nav {
+          padding: 0 3.45vw 0 0;
+        }
+
+        &__project {
+          padding: 0 1vw 0 0;
+        }
+      }
+    }
+  }
+}

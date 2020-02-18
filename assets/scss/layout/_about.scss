@@ -1,0 +1,26 @@
+.about {
+  padding: 1vw 1vw 6.8vw 1vw;
+
+  img {
+    display: block;
+    width: 100%;
+    margin: 0 0 3vw 0;
+  }
+
+  p {
+    @include respond-to("small") {
+      font-size: 20px;
+      line-height: 24px;
+      margin: 0 0 24px 0;
+    }
+    @include respond-to("medium") {
+      font-size: 2.4vw;
+      line-height: 2.4vw;
+      margin: 0 0 2.4vw 0;
+    }
+
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+}

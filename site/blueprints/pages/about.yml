@@ -1,0 +1,38 @@
+title: About us
+icon: ☎️
+status:
+  draft: true
+  listed: true
+options:
+  changeSlug: false
+  delete: false
+columns:
+  - width: 1/2
+    fields:
+      text:
+        label: Text
+        type: textarea
+        size: huge
+  - width: 1/2
+    fields:
+      # logo:
+      #   type: files
+      #   template: image
+      #   info: "{{ file.dimensions }}"
+      #   image:
+      #     ratio: 5/4
+      #     cover: true
+      #   min: 1
+      #   size: small
+      address:
+        label: Address
+        type: text
+      email:
+        label: Email
+        type: email
+      inquiries:
+        label: Inquiries
+        type: email
+      instagram:
+        label: instagram
+        type: url

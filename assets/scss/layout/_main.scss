@@ -1,0 +1,103 @@
+#viewport {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  margin: 0 auto 0 auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.project {
+  margin: 0 1vw 6.8vw 1vw;
+
+  // To account for header fixed position on desktop version
+  &:first-of-type {
+    margin: 9.3vw 1vw 6.8vw 1vw;
+  }
+
+  &__gallery {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    @include respond-to("small") {
+      flex-direction: column;
+    }
+    @include respond-to("medium") {
+      flex-direction: row;
+    }
+
+    .item {
+      overflow: hidden;
+      margin: 0 4px 4px 0;
+      max-width: 45%;
+
+      &:last-of-type {
+        margin: 0 4px 0 0;
+      }
+
+      img {
+        width: 100%;
+        display: block;
+      }
+    }
+
+    @include respond-to("small") {
+      .xsmall {
+        flex: 1;
+      }
+      .small {
+        flex: 1;
+      }
+      .medium {
+        flex: 1;
+      }
+      .large {
+        flex: 1;
+      }
+      .xlarge {
+        flex: 1;
+      }
+      .xxlarge {
+        flex: 1;
+      }
+    }
+    @include respond-to("medium") {
+      .xsmall {
+        flex: 1;
+      }
+      .small {
+        flex: 2;
+      }
+      .medium {
+        flex: 4;
+      }
+      .large {
+        flex: 7;
+      }
+      .xlarge {
+        flex: 10;
+      }
+      .xxlarge {
+        flex: 20;
+      }
+    }
+  }
+
+  &__info {
+    margin: 10px 0 0 0;
+    display: flex;
+
+    @include respond-to("small") {
+      flex-direction: column;
+    }
+    @include respond-to("medium") {
+      flex-direction: row;
+    }
+
+    p {
+      margin: 0 25px 0 0;
+      text-transform: uppercase;
+    }
+  }
+}
