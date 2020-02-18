@@ -180,7 +180,7 @@
 
     function constructDefaultSettings() {
         var retObject = {
-            targetsize: 0.68,
+            targetsize: 0.6,
              duration: 1200,
             scalemode: "height",
             root: $('document.body'),
@@ -400,7 +400,8 @@
         // var xoffset = (dw-elem.outerWidth()*scale)/2.0;
         // var yoffset = (dh-elem.outerHeight()*scale)/2.0;
 
-        var xoffset = 0;
+
+        var xoffset = 60;
         var yoffset = (dh-elem.outerHeight()*scale)/2.0;
 
         var xrotorigin = dw/2.0;

@@ -61,7 +61,7 @@
         };
       } else {
         settings.animationendcallback = function() {
-          //   console.log("hey");
+            console.log("hey");
 
           videoChecker(clickTarget);
 
@@ -101,13 +101,14 @@
       rootSettings.animationendcallback = function() {
         var $elem = $(this);
         if ($(".selectedZoomTarget").length) {
-          //   console.log("lol");
+            console.log("lol");
           pauseVideo();
           $("#overview").addClass("active");
         }
         $(
           "#to" +
             $(".selectedZoomTarget")
+              .parent()
               .parent()
               .prop("id")
         ).removeClass("active");
