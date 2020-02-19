@@ -46,13 +46,6 @@
     if (!settings.animationendcallback) {
       if (!settings.closeclick) {
         settings.animationendcallback = function() {
-          $(
-            "#to" +
-              clickTarget
-                .parent()
-                .parent()
-                .prop("id")
-          ).removeClass("active");
 
           $(".selectedZoomTarget").removeClass(
             "selectedZoomTarget zoomNotClickable"
@@ -65,25 +58,13 @@
 
           videoChecker(clickTarget);
 
-          $("#overview").removeClass("active");
-          $(
-            "#to" +
-              clickTarget
-                .parent()
-                .parent()
-                .prop("id")
-          ).removeClass("active");
+          $("#overview-nav").removeClass("active");
+          
           $(".selectedZoomTarget").removeClass(
             "selectedZoomTarget zoomNotClickable"
           );
           clickTarget.addClass("selectedZoomTarget");
-          $(
-            "#to" +
-              clickTarget
-                .parent()
-                .parent()
-                .prop("id")
-          ).addClass("active");
+
         };
       }
     }
@@ -101,9 +82,11 @@
       rootSettings.animationendcallback = function() {
         var $elem = $(this);
         if ($(".selectedZoomTarget").length) {
-            console.log("lol");
+          console.log("lol");
+          $("#overview-nav").removeClass("active");  
+
           pauseVideo();
-          $("#overview").addClass("active");
+          
         }
         $(
           "#to" +
@@ -124,15 +107,21 @@
 
       // FIXME: there could be many of these called simultaneously,
       // don't know what would happen then
-      $root.click();
+      // $root.click();
     }
 
     clickTarget.on("click", function(evt) {
+
+      console.log('here');
       // closeclick not available here...
       if (settings.closeclick && zoomTarget.hasClass("selectedZoomTarget")) {
         settings.root.click();
+
       } else {
+        tabChecker(evt);
         zoomTarget.zoomTo(settings);
+
+
       }
       evt.stopPropagation();
     });
@@ -208,5 +197,32 @@
       myVideo.currentTime = 0;
       myVideo.load();
     });
+  }
+
+
+  function tabChecker(clickTarget){
+
+    console.log(clickTarget);
+
+    if(clickTarget.target.id == 'about-nav'){
+       $("#" + clickTarget.target.id).addClass("active");
+       $("#overview-nav").removeClass("active");
+       $("#about").show();
+    }else if(clickTarget.target == 'img.lazy.loaded'){
+      console.log('yo')
+        //       $(
+        //   "#to" +
+        //     $(clickTarget)
+        //       .parent()
+        //       .parent()
+        //       .parent()
+        //       .prop("id")
+        // ).addClass("active");
+
+    }else{
+       $("#about").hide();
+    }
+   
+
   }
 })(jQuery);

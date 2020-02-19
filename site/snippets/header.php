@@ -24,17 +24,17 @@
     <nav>
       <ul>
         <li class="link__nav">
-          <a href="<?= $site->page('about')->inquiries()->html() ?>">
+          <a href="mailto:<?= $site->page('about')->inquiries()->html() ?>">
             <?= $site->page('about')->email()->html() ?>
           </a>
         </li>
         <li class="link__nav">Stylist</li>
         <li class="link__nav">
-          <a href="#about">
+          <a id="about-nav" href="#">
             About
           </a>
         </li>
-        <li class="link__nav">Overview;</li>
+        <li id="overview-nav" class="link__nav">Overview;</li>
         <?php if ($workPage = page('work')): ?>
           <?php foreach ($workPage->children()->listed() as $project): ?>
             <li class="link__project">

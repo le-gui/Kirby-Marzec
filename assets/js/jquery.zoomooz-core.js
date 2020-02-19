@@ -186,7 +186,7 @@
             root: $('document.body'),
             debug: false,
             animationendcallback: null,
-            closeclick: true
+            closeclick: false
         };
 
         // FIXME: feat detection would be better
@@ -593,6 +593,10 @@
         } else {
             return new PureCSSMatrix(rawTrans);
         }
+    }
+
+    function sup(){
+
     }
 
 })(jQuery);

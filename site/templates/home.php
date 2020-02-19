@@ -1,7 +1,7 @@
 
 <main id="viewport" class="zoomViewport">
 <?php snippet('header') ?>
-  <div class="zoomContainer">
+  <div class="zoomContainer container">
 
   <?php if ($workPage = page('work')): ?>
   <?php foreach ($workPage->children()->listed() as $project): ?>
@@ -58,9 +58,9 @@
   <?php endforeach ?>
   <?php endif ?>
 
-  <?php snippet('about') ?>
-
   </div>
 </main>
+
+ <?php snippet('about') ?>
 
 <?php snippet('footer') ?>
